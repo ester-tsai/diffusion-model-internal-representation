@@ -121,23 +121,12 @@
                         <br>
                 </div>
 
-                <h3> TRACER/MiDaS/Intrinsic Generated Image Label </h3>
-                <p class='text-muted'>
-
-                    For salient object detection, we apply the salient object tracing model TRACER to generate a mask for each image. The masks are black and white, where white indicates the salient object, or foreground, and black indicates the background. 
-
-                    <br>
-                <p class='text-muted'>
-
-                    For depth labels, we apply the pre-trained MiDaS model to the diffusion images to estimate their relative inverse depth maps. 
-
-                    <br>
-
-                <p class='text-muted'>
-
-                    For shading labels, we apply the pre-trained Intrinsic model to the diffusion images to generate highly accurate intrinsic decompositions and estimate the shading maps.
-
-                    <br>
+                <h3> Generate Image Labels With TRACER, MiDaS, and Intrinsic </h3>
+                    <ul class='text-muted'> 
+                      <li>For salient object detection, we apply the salient object tracing model TRACER to generate a mask for each image. The masks are black and white, where white indicates the salient object, or foreground, and black indicates the background. </li>
+                      <li>For depth labels, we apply the pre-trained MiDaS model to the diffusion images to estimate their relative inverse depth maps. </li>
+                      <li>For shading labels, we apply the pre-trained Intrinsic model to the diffusion images to generate highly accurate intrinsic decompositions and estimate the shading maps.</li>
+                    </ul>
                 
             </div>
         </div>
