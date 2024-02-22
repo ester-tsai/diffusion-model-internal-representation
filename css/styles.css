@@ -11449,8 +11449,8 @@ p {
   }
 }
 header.masthead {
-  padding-top: 10.5rem;
-  padding-bottom: 6rem;
+  /* padding-top: 10.5rem;
+  padding-bottom: 6rem; */
   text-align: center;
   color: #fff;
   /* background-image: url("../assets/img/internal_repr/car no text.png"); */
@@ -11460,16 +11460,17 @@ header.masthead {
   background-size: cover;
   position: relative;
   background-color: black;
+  /* height: 100vh; */
 }
 header.masthead::before{
   content: "";
   background-image: url("../assets/img/internal_repr/car no text.png");
   background-size: cover;
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   opacity: 0.3;
 }
 header.masthead .masthead-subheading {
@@ -11497,7 +11498,8 @@ header.masthead .btn-primary {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
+    /* padding-top: 17rem; */
+    padding-top: 10rem;
     padding-bottom: 12.5rem;
   }
   header.masthead .masthead-subheading {
