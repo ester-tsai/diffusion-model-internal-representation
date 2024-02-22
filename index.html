@@ -54,50 +54,47 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Background</h2>
-                <h3 class="section-subheading text-muted">How did this project come to be?</h3>
+<!--                 <h3 class="section-subheading text-muted">How did this project come to be?</h3> -->
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
+<!--                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa-solid fa-school fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="my-3">UCSD China Data Lab</h4>
-                    <p class="text-muted">In the "Congress Tweets" project, the UCSD China Data Lab hand-scraped and
-                        scored thousands of
-                        Tweets to see how China is represented in Tweets from the U.S. Congressmembers. You can read
-                        their results
-                        <a href="https://chinadatalab.ucsd.edu/viz-blog/who-in-the-us-congress-tweets-about-china/">
-                            here. </a>
+                    </span> -->
+                    <h4 class="my-3">Diffusion Model</h4>
+                    <p class="text-muted">
+                        Image generators like Dall-E, Google’s Imagen, Stable Diffusion, and Midjourney use diffusion models to perform formerly manual tasks like image creation, denoising, inpainting, and outpainting. 
+                        </br>The diffusion method consists of a forward diffusion process and a reverse process. The goal of the model is to iteratively reverse the diffusion by predicting the Gaussian noise added at each time step.
+
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
+<!--                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="my-3">Quarter 1 Results</h4>
-                    <p class="text-muted">We utilized standard Machine Learning models from the
-                        <code>scikit-learn</code> Python library to see how traditional methods work on this issue. We
-                        found that <strong>Naive Bayes</strong> and <strong>Random Forest</strong> proved to be the
-                        highest-performing models, but we had
-                        issues with class imbalance that made our results a little shaky.
-                        <br>
-                        <a class="text-amber-400" href="https://github.com/AnnieeeeeF/DSC180A_Project1">Annie's Q1
-                            Code</a><br>
-                        <a class="text-amber-400" href="https://github.com/gprasad125/dsc180a_project">Gokul's Q1
-                            Code</a>
+                    </span> -->
+                    <h4 class="my-3">Stable Diffusion</h4>
+                    <p class="text-muted">
+                        Stable Diffusion is an open-source diffusion model that generates images from text prompts. It consists of 2 stages:
+                        <ol class="text-muted">
+                          <li>Latent Diffusion Model (LDM): The LDM learns to predict and remove noise in the latent space by reversing a forward diffusion process. </li>
+                          <li>Variational Autoencoder (VAE): The VAE converts data between latent and image space. </li>
+                        </ol>
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
+<!--                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="my-3">Large Language Models (LLMs)</h4>
-                    <p class="text-muted">LLMs have exploded in popularity and sophistication over the last few years
-                        with cost-affordable and high-quality models being made publicly-accessible. We chose OpenAI
-                        GPT-3 as our option due to its incredible quality and ease-of-use in Python.</p>
+                    </span> -->
+                    <h4 class="my-3">Problem Statement</h4>
+                    <p class="text-muted">
+                        It is a mystery how an LDM transforms a phrase like "car on the road" into a picture. Does the LDM memorize superficial correlations between pixel values and words? Or does it learn an underlying model of objects (e.g. cars, roads) and how they are typically positioned?
+
+                        </br>So we ask: Does an LDM create an internal 3D representation of the object it portrays in 2D? 
+                        </br>Additionally we ask: At what time step does an image classifier correctly detect the object?
+                    </p>
                 </div>
             </div>
         </div>
@@ -106,96 +103,44 @@
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">EDA</h2>
-                <h3 class="section-subheading text-muted">Visualizations to help understand the data.</h3>
+                <h2 class="section-heading text-uppercase">Data</h2>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 1-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/eda/relevance.png" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Relevance Distribution</div>
-                        </div>
-                    </div>
+            <div>
+                <h3> LDM Generated Image Dataset </h3>
+                <p class='text-muted'>
+
+                    Our diffusion image dataset consists of 617 images (512 pixels x 512 pixels) generated using Stable Diffusion v1.4. We have a CSV file that contains the prompt index, text prompt, and seed for each image. For example, the image with the prompt index 5246271, the text prompt "ZIGGY - EASY ARMCHAIR", and the seed 64140790 generated the 512 by 512 in Figure 1.
+
+                    <br>
+                </p>
+                <div class='text-center'>
+                     <img src='assets/img/data/dataset.png' height=600 width=600 />
+                     <figcaption>Fig.1 (top left) 512 x 512 image generated by Stable Diffusion v1.4. <br>
+                        (top right) Salient object detection mask generated by TRACER. <br>
+                        (bottom left) Depth map generated by MiDaS. <br> 
+                        (bottom right) Shading and illumination map generated by Intrinsic.<br></figcaption>
+
+                        <br>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 2-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/eda/sentiment.png" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Sentiment Distribution</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 3 -->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/eda/sentiment_by_time.png" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Sentiment Over Time</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                    <!-- Portfolio item 4-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/eda/TweetsByState.png" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Tweets by State</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0"> -->
-                <!-- Portfolio item 5-->
-                <!-- <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Southwest</div>
-                            <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                        </div>
-                    </div> -->
-                <!-- </div> -->
-                <!-- <div class="col-lg-4 col-sm-6"> -->
-                <!-- Portfolio item 6-->
-                <!-- <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Window</div>
-                            <div class="portfolio-caption-subheading text-muted">Photography</div>
-                        </div>
-                    </div> -->
-                <!-- </div> -->
+
+                <h3> TRACER/MiDaS/Intrinsic Generated Image Label </h3>
+                <p class='text-muted'>
+
+                    For salient object detection, we apply the salient object tracing model TRACER to generate a mask for each image. The masks are black and white, where white indicates the salient object, or foreground, and black indicates the background. 
+
+                    <br>
+                <p class='text-muted'>
+
+                    For depth labels, we apply the pre-trained MiDaS model to the diffusion images to estimate their relative inverse depth maps. 
+
+                    <br>
+
+                <p class='text-muted'>
+
+                    For shading labels, we apply the pre-trained Intrinsic model to the diffusion images to generate highly accurate intrinsic decompositions and estimate the shading maps.
+
+                    <br>
+                
             </div>
         </div>
     </section>
