@@ -11453,7 +11453,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  /* background-image: url("../assets/img/car no text.png"); */
+  /* background-image: url("../assets/img/internal_repr/car no text.png"); */
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11463,7 +11463,7 @@ header.masthead {
 }
 header.masthead::before{
   content: "";
-  background-image: url("../assets/img/car no text.png");
+  background-image: url("../assets/img/internal_repr/car no text.png");
   background-size: cover;
   position: absolute;
   top: 0px;
