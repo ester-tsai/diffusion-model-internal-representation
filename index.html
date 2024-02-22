@@ -146,8 +146,8 @@
     <section class="page-section" id="about">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Methods</h2>
-                <h3 class="section-subheading text-muted">Timeline of development for the two GPT-3 powered models.</h3>
+                <h2 class="section-heading text-uppercase">Internal Representation Methods</h2>
+                <h3 class="section-subheading text-muted">Internal representation = the neural network’s self-attention layer’s intermediate activation output.</h3>
             </div>
             <ul class="timeline">
                 <li>
@@ -155,14 +155,14 @@
                             alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h3>Model Selection</h3>
-                            <h5 class="subheading">Choosing the Right GPT-3 Submodel</h5>
+                            <h3>Data</h3>
+                            <h5 class="subheading">Generate Images Using Stable Diffusion</h5>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">GPT-3 has 4 powerful models under its hood, but <code> davinci </code>
-                                was our selection due to its higher capacity for understanding specific instruction.
-                                Furthermore, its training data ends in October 2021, nearly 2 years after every other
-                                model choice.
+                            <p class="text-muted">
+                                We use the open-source code provided by Stable Diffusion to generate images that are 512 pixels by 512 pixels. 
+                                Each image requires a prompt and a seed. The prompt describes what the image should portray while the seed ensures 
+                                that we will generate the same image each time for the same prompt.
                             </p>
                         </div>
                     </div>
@@ -172,17 +172,16 @@
                             alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h3>Initial Prompting</h3>
-                            <h5 class="subheading">Starting the Process</h5>
+                            <h3>Get Ground Truths</h3>
+                            <h5 class="subheading">Tracer, MiDaS, and Intrinsic</h5>
                         </div>
                         <div class="timeline-body">
 
                             <p class="text-muted">
-                                Initially, both prompts started with very simplistic formats. No in-context learning was
-                                used, and fairly simplistic definitions of terms like 'relevance', 'positive',
-                                'neutral', and 'negative' were used. Because each Tweet required its own API call to the
-                                OpenAI GPT-3 API, the prompts were run on samples of 100 Tweets at a time rather than
-                                the whole dataset.
+                                The diffusion images we generate using Stable Diffusion v1.4 do not have ground truth
+                                labels for salient object detection, depth, or shading, so we apply off-the-shelf models to
+                                those images to synthesize the ground truth images. The labels are the same size as the
+                                diffusion images.
                             </p>
 
                         </div>
@@ -193,15 +192,14 @@
                             src="assets/img/about/handyman.png" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h3>Prompt Engineering</h3>
-                            <h5 class="subheading">Improving Classification</h5>
+                            <h3>Training Probes</h3>
+                            <h5 class="subheading">To Output 3D Properties</h5>
                         </div>
                         <div class="timeline-body">
                             <p class="text-muted">
-                                In order to improve the results from the model, further prompt tuning was required. Both
-                                prompts pursued 'few-shot' learning, where the prompt itself provides example inputs,
-                                outputs, and reasonings. These included randomly selected Tweets as well as 'pain-point'
-                                examples that highlighted where the model consistently struggled.
+                                We train the probe to predict what the mask, depth map, or shading should look like 
+                                based on the internal representation (self-attention layer output) at time step t.
+                                A different probe is trained for each block type, block, layer, and time step. 
                             </p>
                         </div>
                     </div>
@@ -211,13 +209,13 @@
                             alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h3>Comparing to Quarter 1 Results</h3>
-                            <h5 class="subheading">Evaluate Applicability of GPT-3 Models</h5>
+                            <h3>Choosing the Best Probe</h3>
+<!--                             <h5 class="subheading"></h5> -->
                             <p class="text-muted">
-                                To assess if GPT-3 improved classification performance from the team's results in
-                                quarter 1, we compared the GPT-3's performance in classifying Tweet relevance with the
-                                Naive Bayes Classifer from quarter 1 and compared the GPT-3's performance in evalutaing
-                                sentiment with a Random Forest Classifer.
+                                The probes are trained on different U-Net blocks and layers and have varying performances
+                                because of their difference in location, number of features, and output size (see Table 1). We
+                                choose the probe trained on Decoder 4 layer 1 because it produces the biggest outputs and
+                                achieves the highest performance metrics.
                             </p>
                         </div>
                         <div class="timeline-body">
@@ -230,16 +228,15 @@
                             alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h3>Evaluate and Wrapping Up</h3>
-                            <h5 class="subheading"> Into the Future </h5>
+                            <h3>Visualize the Diffusion Process</h3>
+                            <h5 class="subheading">Comparing probing results with off-the-shelf model outputs</h5>
                         </div>
                         <div class="timeline-body">
                             <p class="text-muted">
 
-                                After running through prompt engineering, sampling, and evaluating several times, the
-                                last step of the project was to communicate our findings and results with our mentors
-                                from the China Data Lab, and deciding what role GPT-3 can have in the future of the
-                                'Congress Tweets' project.
+                                Apply the best probes for depth, salient object detection, and shading to a Stable Diffusion image's internal representation at each time step.
+                                Also apply MiDaS for depth, TRACER for salient object detection, and Intrinsic for shading to the intermediate images in the denoising process. 
+                                See the comparison in the Results section.
 
                             </p>
                         </div>
