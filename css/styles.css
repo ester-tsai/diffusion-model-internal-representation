@@ -1,4 +1,11 @@
 @charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&family=Nanum+Myeongjo:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caudex&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trirong:wght@100;200;300&display=swap');
+
 /*!
 * Start Bootstrap - Agency v7.0.11 (https://startbootstrap.com/theme/agency)
 * Copyright 2013-2022 Start Bootstrap
@@ -55,9 +62,9 @@
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-font-monospace: Trirong, Spectral, Nanum Myeongjo, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: Roboto Slab, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --bs-body-font-family: Albert Sans, Roboto Slab, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -144,7 +151,8 @@ hr:not([size]) {
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+  font-family: var(--bs-font-monospace);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -11364,6 +11372,7 @@ p {
   font-weight: 400;
   font-style: italic;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* font-family: var(--bs-body-font-family); */
   margin-bottom: 4rem;
 }
 
@@ -11374,7 +11383,8 @@ p {
 }
 .btn-xl {
   padding: 1.25rem 2.5rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+  font-family: var(--bs-body-font-family);
   font-size: 1.125rem;
   font-weight: 700;
 }
@@ -11404,7 +11414,8 @@ p {
 #mainNav .navbar-brand {
   /* color: #ffc800; */
   color: #1bcfd4;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+  font-family: var(--bs-body-font-family);
   font-weight: 700;
   letter-spacing: 0.0625em;
   text-transform: uppercase;
@@ -11481,7 +11492,7 @@ header.masthead::before{
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0.2;
+  opacity: 0.3;
 }
 header.masthead .masthead-subheading {
   position: relative;
@@ -11491,7 +11502,8 @@ header.masthead .masthead-subheading {
   line-height: 1.5rem;
   /* margin-bottom: 25px; */
   margin-bottom: 25px;
-  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+  font-family: var(--bs-body-font-family);
 }
 
 header.masthead .masthead-heading {
@@ -11500,10 +11512,19 @@ header.masthead .masthead-heading {
   font-size: 3rem;
   font-weight: 700;
   line-height: 3rem;
+  /* line-height: 10rem; */
   /* margin-bottom: 1.5rem; */
   padding-top: 5rem;
   margin-bottom: 1.5rem;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+  font-family: var(--bs-font-monospace);
+}
+
+header.masthead .masthead-heading-sub {
+  position: relative;
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-family: var(--bs-font-monospace);
 }
 header.masthead .btn-primary {
   position: relative;
@@ -11512,11 +11533,12 @@ header.masthead .btn-primary {
 @media (min-width: 768px) {
   header.masthead {
     /* padding-top: 17rem; */
-    padding-top: 5rem;
+    padding-top: 8rem;
     padding-bottom: 12.5rem;
   }
   header.masthead .masthead-subheading {
-    font-size: 2.25rem;
+    /* font-size: 2.25rem; */
+    font-size: 1.5rem;
     /* font-style: italic; */
     line-height: 2.25rem;
     margin-bottom: 3rem;
@@ -11524,7 +11546,17 @@ header.masthead .btn-primary {
   header.masthead .masthead-heading {
     font-size: 4.5rem;
     font-weight: 700;
-    line-height: 4.5rem;
+    /* line-height: 4.5rem; */
+    line-height: 4rem;
+    /* margin-bottom: 4rem; */
+    margin-bottom: 2rem;
+  }
+
+  header.masthead .masthead-heading-sub {
+    font-size: 3.5rem;
+    font-weight: 700;
+    /* line-height: 4.5rem; */
+    line-height: 4rem;
     /* margin-bottom: 4rem; */
     margin-bottom: 2rem;
   }
