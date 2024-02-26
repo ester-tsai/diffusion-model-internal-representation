@@ -654,8 +654,10 @@ progress {
 }
 
 .img-fluid {
-  max-width: 100%;
+  /* max-width: 100%; */
+  max-width: 65%;
   height: auto;
+  padding-top: 17%;
 }
 
 .img-thumbnail {
@@ -7997,9 +7999,9 @@ textarea.form-control-lg {
   border-radius: 0.3rem !important;
 }
 
-.rounded-circle {
+/* .rounded-circle {
   border-radius: 50% !important;
-}
+} */
 
 .rounded-pill {
   border-radius: 50rem !important;
