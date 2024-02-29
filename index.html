@@ -32,6 +32,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
                     <li class="nav-item"><a class="nav-link" href="#bg">Background</a></li>
                     <li class="nav-item"><a class="nav-link" href="#data">Data</a></li>
                     <li class="nav-item"><a class="nav-link" href="#methods-ir">Probing the</br>Network</a></li>
@@ -53,14 +54,52 @@
             <div class="masthead-heading">From Pixels to Pictures:</div>
             <div class="masthead-heading-sub">Understanding the Internal Representations<br>of Latent Diffusion Models</div>
             <div class="masthead-subheading">Karina Chen, Atharva Kulkarni, Ester Tsai, Zelong Wang</div>
-            <a class="btn btn-primary btn-xl" href="#bg">View Work</a>
+            <a class="btn btn-primary btn-xl" href="#overview">View Work</a>
             <!-- <br><br> -->
             <!-- <a class="btn btn-primary" href="/assets/deliverables/report.pdf" target="_blank">Report</a>
             <a class="btn btn-primary" href="/assets/deliverables/poster.png" target="_blank">Poster</a>
             <a class="btn btn-primary" href="https://github.com/karinaechen/diffusion-model-internal-representation" target="_blank">Code</a> -->
         </div>
     </header>
-    <!-- Services-->
+
+
+    <!-- Overview -->
+    <section class="page-section bg-light" id="overview">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Overview</h2>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-6">
+                        <h4 class="my-3">Problem Statement</h4>
+                        <p class="text-muted">
+                            It is a mystery how an LDM transforms a phrase like "car on the road" into a picture. </br>Does the LDM memorize superficial correlations between pixel values and words? 
+                           </br> Or does it learn an underlying model of objects (e.g. cars, roads) and how they are typically positioned?
+                            <ul class='text-muted'> 
+                              <li>Does an LDM create an internal 3D representation of the object it portrays in 2D? </li>
+                              <li>At what time step does an image classifier correctly detect the object? </li>
+                            </ul>
+                        </p>
+                </div>
+    
+                <div class="col-md-6">
+                        <h4 class="my-3">Contributions</h4>
+                        <p class="text-muted">
+                            Our research proves that an LDM can learn 3D properties like saliency, depth, and shading/illumination from 2D images. 
+                            Furthermore, we can modify the LDM's internal representation to reposition the object in the output image.
+                        </br></br>
+                            Performing image classification at each time step shows that ...
+                        </br></br>
+                            (Building on previous research by <a href="https://arxiv.org/pdf/2306.05720.pdf">Y. Chen et al.</a>)
+                        </p>
+                </div>
+           </div>
+        </div>
+
+    </section>
+
+    
+    <!-- Background -->
     <section class="page-section" id="bg">
         <div class="container">
             <div class="text-center">
@@ -81,10 +120,6 @@
                     </p>
                 </div>
                 <div class="col-md-4">
-<!--                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span> -->
                     <h4 class="my-3">Stable Diffusion</h4>
                     <p class="text-muted">
                         Stable Diffusion is an open-source diffusion model that generates images from text prompts.</br>It consists of 2 stages:
@@ -95,16 +130,12 @@
                     </p>
                 </div>
                 <div class="col-md-4">
-<!--                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span> -->
-                    <h4 class="my-3">Problem Statement</h4>
+                    <h4 class="my-3">Probe</h4>
                     <p class="text-muted">
-                        It is a mystery how an LDM transforms a phrase like "car on the road" into a picture. Does the LDM memorize superficial correlations between pixel values and words? 
-                        Or does it learn an underlying model of objects (e.g. cars, roads) and how they are typically positioned?
-                        </br></br>So we ask: Does an LDM create an internal 3D representation of the object it portrays in 2D? 
-                        </br>Additionally we ask: At what time step does an image classifier correctly detect the object?
+                        We use probes to visualize the representation learned by the LDM. 
+                        A probe is a linear neural network that takes in the internal representation (i.e. intermediate activations) of an LDM 
+                        and outputs a predicted image showing a certain property, such as depth, saliency, or shading.
+                        We quantify the performance of a probe by measuring the Dice Coefficient or Rank Correlation between the prediction and the label images.
                     </p>
                 </div>
             </div>
@@ -171,7 +202,8 @@
 
             <ul class="timeline">
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/stable_diffusion_icon.png"
+                    <!-- <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/stable_diffusion_icon.png" -->
+                        <div class="timeline-image"><img class="img-fluid" src="assets/img/about/stable_diffusion_icon.png"
                             alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -188,7 +220,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/tag.png"
+                    <div class="timeline-image"><img class="img-fluid" src="assets/img/about/tag.png"
                             alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -208,7 +240,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                    <div class="timeline-image"><img class="img-fluid"
                             src="assets/img/about/network.png" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -225,7 +257,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/graph.png"
+                    <div class="timeline-image"><img class="img-fluid" src="assets/img/about/graph.png"
                             alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -243,7 +275,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/chart.png"
+                    <div class="timeline-image"><img class="img-fluid" src="assets/img/about/chart.png"
                             alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -330,7 +362,7 @@
             </div>
             <ul class="timeline">
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/stable_diffusion_icon.png"
+                    <div class="timeline-image"><img class="img-fluid" src="assets/img/about/stable_diffusion_icon.png"
                             alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -346,7 +378,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/network.png"
+                    <div class="timeline-image"><img class="img-fluid" src="assets/img/about/network.png"
                             alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -365,7 +397,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                    <div class="timeline-image"><img class="img-fluid"
                             src="assets/img/about/graph.png" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -498,9 +530,11 @@
                         <h4>Ester Tsai</h4>
                         <p class="text-muted">UCSD '24, Data Science & Math</p>
                         <a class="btn btn-dark btn-social mx-2" href="https://github.com/ester-tsai"
-                            aria-label="Parveen Anand Facebook Profile"><i class="fab fa-github"></i></a>
+                            aria-label="Ester Tsai Facebook Profile"><i class="fab fa-github"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/ester-tsai"
-                            aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                            aria-label="Ester Tsai LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="mailto:tsaiester@gmail.com"
+                            aria-label="Ester Tsai Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="flex-item">
@@ -512,6 +546,8 @@
                             aria-label="Karina Chen Facebook Profile"><i class="fab fa-github"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/karina-e-chen/"
                             aria-label="Karina Chen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="mailto:karina.e.chen@gmail.com"
+                            aria-label="Karina Chen Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
@@ -525,6 +561,8 @@
                             aria-label="Zelong Wang Facebook Profile"><i class="fab fa-github"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/alanwang-ucsd/"
                             aria-label="Zelong Wang LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="mailto:zew013@ucsd.edu"
+                            aria-label="Zelong Wang Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="flex-item">
@@ -536,6 +574,8 @@
                             aria-label="Atharva Kulkarni Github Profile"><i class="fab fa-github"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/atharva-pk/"
                             aria-label="Atharva Kulkarni LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="mailto:apkulkarni@ucsd.edu"
+                            aria-label="Atharva Kulkarni Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <!-- <div class="flex-item">
