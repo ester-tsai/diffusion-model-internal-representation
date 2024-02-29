@@ -133,10 +133,6 @@
                     </p>
                 </div>
                 <div class="col-md-4">
-<!--                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                    </span> -->
                     <h4 class="my-3">Stable Diffusion</h4>
                     <p class="text-muted">
                         Stable Diffusion is an open-source diffusion model that generates images from text prompts.</br>It consists of 2 stages:
@@ -147,16 +143,12 @@
                     </p>
                 </div>
                 <div class="col-md-4">
-<!--                     <span class="fa-stack fa-4x">
-                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span> -->
-                    <h4 class="my-3">Problem Statement</h4>
+                    <h4 class="my-3">Probe</h4>
                     <p class="text-muted">
-                        It is a mystery how an LDM transforms a phrase like "car on the road" into a picture. Does the LDM memorize superficial correlations between pixel values and words? 
-                        Or does it learn an underlying model of objects (e.g. cars, roads) and how they are typically positioned?
-                        </br></br>So we ask: Does an LDM create an internal 3D representation of the object it portrays in 2D? 
-                        </br>Additionally we ask: At what time step does an image classifier correctly detect the object?
+                        We use probes to visualize the representation learned by the LDM. 
+                        A probe is a linear neural network that takes in the internal representation (i.e. intermediate activations) of an LDM 
+                        and outputs a predicted image showing a certain property, such as depth, saliency, or shading.
+                        We quantify the performance of a probe by measuring the Dice Coefficient or Rank Correlation between the prediction and the label images.
                     </p>
                 </div>
             </div>
