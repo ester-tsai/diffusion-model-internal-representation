@@ -439,9 +439,12 @@
             <div class="row">
                 <h3> Classifications Throughout the Diffusion Process </h3>
                 <p class="text-muted">
-                    The correct classification has high probability (> 90%) towards the end of the diffusion
-                    process for the majority of generated images, starting from around step 12. This means that the
-                    diffused images are fairly good representations of the object prompted.
+                    VGG-16 could not correctly identify the object until after step 11, which shows that saliency appears much later in the intermediate images. In contrast, saliency and other 3D information appear as early as step 3 out of 15 in an LDM's internal representation.  
+                    
+                    The correct classification has high confidence (> 90%) towards the end of the diffusion process for the majority of generated images.
+                    This means that the generated images are fairly good representations of the object prompted.
+                    
+
 
                     <br>
                     <div class='text-center'><img src="assets/img/img_class/lemon.png" width=600 alt="lemon"> <img src="assets/img/img_class/orange.png" width=600 alt="orange"></div>
